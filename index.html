@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A.B Electric Service - Professional electrical repair, AC, fridge, geyser, inverter servicing. Bongaon to Barasat. Call 8436078538">
+  <title>A.B Electric Service | Bongaon to Barasat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Nunito:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #051a38 0%, #0B1C3D 50%, #0d2a5c 100%);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding-top: 68px;
+    }
+    
+    /* Animated gradient background */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F5C518' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      animation: drift 12s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    /* Floating background circles */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -50%; right: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(245,197,24,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 20s ease-in-out infinite;
+      z-index: 0;
+      filter: blur(60px);
+      pointer-events: none;
+    }
+    
+    /* Additional floating elements */
+    .hero {
+      --float-circle-1: 0px 0px rgba(245,197,24,0.08);
+      --float-circle-2: 200px 100px rgba(245,197,24,0.05);
+    }
+    
+    @keyframes drift {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(25px); }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(-40px, -40px) scale(1.05); }
+      50% { transform: translate(30px, -50px) scale(1.1); }
+      75% { transform: translate(50px, -20px) scale(1.05); }
+    }
+    
+    @keyframes floatCircle {
+      0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+      33% { transform: translateY(-30px) translateX(15px) scale(1.08); }
+      66% { transform: translateY(20px) translateX(-20px) scale(0.95); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(245,197,24,0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(245,197,24,0); }
+    }
+    
+    /* Add glow circles */
+    .glow-element {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0.7;
+      filter: blur(50px);
+    }
+    
+    .glow-1 {
+      width: 400px; height: 400px;
+      background: rgba(245, 197, 24, 0.08);
+      top: 10%; right: -5%;
+      animation: floatCircle 10s ease-in-out infinite;
+    }
+    
+    .glow-2 {
+      width: 300px; height: 300px;
+      background: rgba(245, 197, 24, 0.05);
+      bottom: 5%; left: -10%;
+      animation: floatCircle 14s ease-in-out infinite reverse;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+      position: relative; z-index: 2;
+    }
+    
+    .hero-content {
+      animation: slideInLeft 0.8s ease both;
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, rgba(245,197,24,0.18), rgba(245,197,24,0.08));
+      border: 1.5px solid rgba(245,197,24,0.5);
+      color: var(--gold);
+      font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 10px 20px; border-radius: 50px;
+      margin-bottom: 32px;
+      backdrop-filter: blur(15px);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: slideInLeft 0.8s ease both;
+      animation-delay: 0.1s;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-badge::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .hero-badge:hover {
+      background: linear-gradient(135deg, rgba(245,197,24,0.28), rgba(245,197,24,0.15));
+      border-color: rgba(245,197,24,0.8);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(245,197,24,0.25);
+    }
+    
+    .hero-badge:hover::before {
+      left: 100%;
+    }
+    
+    .hero h1 {
+      color: var(--white);
+      margin-bottom: 16px;
+      font-size: 3.5rem;
+      line-height: 1.2;
+      animation: slideInLeft 0.8s ease both;
+      animation-delay: 0.2s;
+    }
+    
+    .hero h1 span {
+      color: var(--gold);
+      display: block;
+      background: linear-gradient(135deg, #FFD84D 0%, #F5C518 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-sub {
+      font-size: 1.1rem; color: rgba(255,255,255,0.75);
+      margin: 24px 0 40px; max-width: 520px;
+      line-height: 1.7;
+      animation: slideInLeft 0.8s ease both;
+      animation-delay: 0.3s;
+    }
+    
+    .hero-btns {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      animation: slideInLeft 0.8s ease both;
+      animation-delay: 0.4s;
+    }
+    
+    .hero-btns .btn {
+      padding: 14px 32px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 6px 20px rgba(245,197,24,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-btns .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+      pointer-events: none;
+    }
+    
+    .hero-btns .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .hero-btns .btn-primary {
+      background: linear-gradient(135deg, var(--gold) 0%, #FFD84D 100%);
+      color: var(--navy-dark);
+      border: none;
+    }
+    
+    .hero-btns .btn-primary:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(245,197,24,0.5);
+    }
+    
+    .hero-btns .btn-outline {
+      border: 2px solid rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      backdrop-filter: blur(10px);
+    }
+    
+    .hero-btns .btn-outline:hover {
+      border-color: var(--gold);
+      background: rgba(245,197,24,0.15);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(245,197,24,0.3);
+    }
+    .hero-visual {
+      display: flex; flex-direction: column; gap: 16px;
+      animation: slideInRight 0.8s ease both;
+      animation-delay: 0.3s;
+    }
+    
+    .hero-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border: 1.5px solid rgba(255,255,255,0.15);
+      border-radius: 18px;
+      padding: 24px 28px;
+      backdrop-filter: blur(20px);
+      display: flex; align-items: center; gap: 20px;
+      animation: floatUp 0.6s ease both;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(245,197,24,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: 18px;
+    }
+    
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(245,197,24,0.2) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      border-radius: 18px;
+      z-index: 0;
+    }
+    
+    .hero-card:hover {
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+      border-color: rgba(245,197,24,0.5);
+      transform: translateY(-12px);
+      box-shadow: 0 20px 60px rgba(245,197,24,0.25), 0 0 30px rgba(245,197,24,0.1);
+    }
+    
+    .hero-card:hover::before {
+      opacity: 1;
+    }
+    
+    .hero-card:hover::after {
+      opacity: 1;
+    }
+    
+    .hero-card:nth-child(2) { animation-delay: 0.15s; margin-left: 24px; }
+    .hero-card:nth-child(3) { animation-delay: 0.3s; }
+    
+    .hero-card .hc-icon {
+      font-size: 2.2rem; width: 56px; height: 56px;
+      background: linear-gradient(135deg, rgba(245,197,24,0.25), rgba(245,197,24,0.15));
+      border: 2px solid rgba(245,197,24,0.4);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-card:hover .hc-icon {
+      background: linear-gradient(135deg, rgba(245,197,24,0.4), rgba(245,197,24,0.3));
+      border-color: rgba(245,197,24,0.7);
+      transform: scale(1.2) rotate(8deg);
+      box-shadow: 0 0 20px rgba(245,197,24,0.4);
+    }
+    
+    .hero-card .hc-text strong {
+      display: block; color: var(--white);
+      font-family: var(--font-head); font-size: 1.08rem; font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .hero-card .hc-text span {
+      font-size: 0.85rem; color: rgba(255,255,255,0.6);
+      display: block;
+    }
+    
+    .hero-card .hc-text {
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes floatUp {
+      from { opacity:0; transform: translateY(20px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    /* ---- SERVICES SECTION ---- */
+    .services-section { background: var(--off-white); }
+    .services-grid-home {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    /* ---- WHY US ---- */
+    .why-section { background: var(--white); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .why-content h2 { margin-bottom: 16px; }
+    .why-list { margin-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .why-item {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .why-item .wi-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--gold);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .why-item h4 { color: var(--navy); margin-bottom: 4px; }
+    .why-item p { font-size: 0.9rem; margin: 0; color: var(--mid-gray); }
+    .why-visual {
+      background: var(--navy);
+      border-radius: 24px;
+      padding: 40px;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .trust-badge {
+      display: flex; align-items: center; gap: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 16px 20px;
+    }
+    .trust-badge .tb-icon { font-size: 1.6rem; }
+    .trust-badge strong { display: block; color: var(--white); font-size: 1rem; }
+    .trust-badge span { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+
+    /* ---- SERVICE AREA ---- */
+    .area-section { background: var(--navy); }
+    .area-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .area-map {
+      position: relative;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px; padding: 32px;
+    }
+    .route-line {
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .route-stop {
+      display: flex; align-items: center; gap: 16px;
+      position: relative;
+    }
+    .route-stop:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 11px; top: 28px;
+      width: 2px; height: 32px;
+      background: rgba(245,197,24,0.3);
+    }
+    .route-dot {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.6rem; color: var(--navy-dark);
+      flex-shrink: 0; font-weight: 800;
+      z-index: 1;
+    }
+    .route-dot.end { background: var(--gold-light); width: 28px; height: 28px; }
+    .route-stop-label { padding: 12px 0; }
+    .route-stop-label strong { display: block; color: var(--white); font-size: 0.95rem; }
+    .route-stop-label span { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+
+    /* ---- WORKFLOW ---- */
+    .workflow-section { background: var(--off-white); }
+    .workflow-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px; margin-top: 16px;
+    }
+    .workflow-step {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      border: 1.5px solid var(--light-gray);
+      position: relative;
+    }
+    .step-num {
+      width: 48px; height: 48px;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: var(--font-head); font-size: 1.3rem; font-weight: 800;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+    }
+    .workflow-step h4 { color: var(--navy); margin-bottom: 8px; }
+    .workflow-step p { font-size: 0.88rem; color: var(--mid-gray); margin: 0; }
+
+    /* ---- RESPONSIVE ---- */
+    @media(max-width: 900px) {
+      .hero-grid, .why-grid, .area-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero { min-height: auto; padding: 100px 0 60px; }
+      .hero-visual { display: none; }
+      .services-grid-home { grid-template-columns: repeat(2, 1fr); }
+      .workflow-steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width: 560px) {
+      .services-grid-home { grid-template-columns: 1fr 1fr; }
+      .workflow-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/Logo.png" alt="AB Electric Service Logo" style="width: 40px; height: 40px; object-fit: contain;">
+      <div class="logo-text">
+        <span data-en="A.B Electric Service" data-bn="এ.বি ইলেকট্রিক সার্ভিস">A.B Electric Service</span>
+        <span data-en="Provided by Kiranmoy Paul" data-bn="কিরণময় পাল">Provided by Kiranmoy Paul</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active" data-en="Home" data-bn="হোম">Home</a></li>
+      <li><a href="about.html" data-en="About" data-bn="আমাদের সম্পর্কে">About</a></li>
+      <li><a href="services.html" data-en="Services" data-bn="সেবাসমূহ">Services</a></li>
+      <li><a href="training.html" data-en="Training" data-bn="প্রশিক্ষণ">Training</a></li>
+      <li><a href="contact.html" data-en="Contact" data-bn="যোগাযোগ">Contact</a></li>
+      <li><a href="book-service.html" class="nav-cta" data-en="Book Service" data-bn="সেবা বুক করুন">Book Service</a></li>
+      <li>
+        <button class="lang-toggle" id="langToggle" title="Switch Language">🌐 বাংলা</button>
+      </li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">⚡ <span data-en="Professional Electrical Service" data-bn="পেশাদার বৈদ্যুতিক সেবা">Professional Electrical Service</span></div>
+        <h1 data-en="Electrical Solution <span>For Your Home</span>" data-bn="আপনার ঘরের জন্য <span>বৈদ্যুতিক সমাধান</span>">Electrical Solution <span>For Your Home</span></h1>
+        <p class="hero-sub" data-en="AC · Fridge · Geyser · Inverter · Motor · Fan · Solar · Wiring — all electrical repairs and installation at your doorstep. Serving Bongaon to Barasat." data-bn="এসি · ফ্রিজ · গিজার · ইনভার্টার · মোটর · ফ্যান · সোলার · ওয়্যারিং — সব বৈদ্যুতিক মেরামত ও ইনস্টলেশন আপনার দরজায়। বঙ্গাঁও থেকে বারাসাত পর্যন্ত।">AC · Fridge · Geyser · Inverter · Motor · Fan · Solar · Wiring — all electrical repairs and installation at your doorstep. Serving Bongaon to Barasat.</p>
+        <div class="hero-btns">
+          <a href="book-service.html" class="btn btn-primary btn-lg" data-en="📋 Book a Service" data-bn="📋 সেবা বুক করুন">📋 Book a Service</a>
+          <a href="tel:+918436078538" class="btn btn-outline btn-lg" data-en="📞 Call Now" data-bn="📞 এখনই কল করুন">📞 Call Now</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hc-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="hc-text">
+            <strong data-en="Safe & Reliable Service" data-bn="নিরাপদ ও নির্ভরযোগ্য সেবা">Safe & Reliable Service</strong>
+            <span data-en="Every job done with care" data-bn="প্রতিটি কাজ যত্নসহকারে">Every job done with care</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hc-icon"><i class="fas fa-bolt"></i></div>
+          <div class="hc-text">
+            <strong data-en="Fast Response" data-bn="দ্রুত সাড়া">Fast Response</strong>
+            <span data-en="Quick service at your location" data-bn="আপনার জায়গায় দ্রুত সেবা">Quick service at your location</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hc-icon"><i class="fas fa-map-pin"></i></div>
+          <div class="hc-text">
+            <strong data-en="Bongaon → Barasat" data-bn="বঙ্গাঁও → বারাসাত">Bongaon → Barasat</strong>
+            <span data-en="Gaighata · Habra · Ashoknagar · Gobardanga" data-bn="গাইঘাটা · হাবরা · অশোকনগর · গোবরডাঙা">Gaighata · Habra · Ashoknagar · Gobardanga</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <div class="num">500+</div>
+        <div class="label" data-en="Happy Customers" data-bn="সন্তুষ্ট গ্রাহক">Happy Customers</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="num">8+</div>
+        <div class="label" data-en="Services Offered" data-bn="সেবার ধরন">Services Offered</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="num">6</div>
+        <div class="label" data-en="Areas Covered" data-bn="এলাকা কভার">Areas Covered</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="num">100%</div>
+        <div class="label" data-en="Customer Satisfaction" data-bn="গ্রাহক সন্তুষ্টি">Customer Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section services-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag" data-en="What We Do" data-bn="আমরা কী করি">What We Do</div>
+      <h2 data-en="Our Services" data-bn="আমাদের সেবাসমূহ">Our Services</h2>
+      <p data-en="Complete electrical and appliance solutions for your home" data-bn="আপনার ঘরের জন্য সম্পূর্ণ বৈদ্যুতিক ও যন্ত্রপাতি সমাধান">Complete electrical and appliance solutions for your home</p>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid-home">
+      <a href="services.html" class="service-card reveal">
+        <img src="https://plus.unsplash.com/premium_photo-1679943423706-570c6462f9a4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.0" alt="AC Service" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -20px -20px 12px;">
+        <h3 data-en="AC Service" data-bn="এসি সার্ভিস">AC Service</h3>
+        <p data-en="Repair, gas refill & installation" data-bn="মেরামত, গ্যাস রিফিল ও ইনস্টলেশন">Repair, gas refill & installation</p>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <img src="https://images.unsplash.com/photo-1630459065645-549fe5a56db4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0" alt="Fridge Service" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -20px -20px 12px;">
+        <h3 data-en="Fridge Service" data-bn="ফ্রিজ সার্ভিস">Fridge Service</h3>
+        <p data-en="Cooling problems & all repairs" data-bn="ঠান্ডার সমস্যা ও সব মেরামত">Cooling problems & all repairs</p>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <img src="https://images.unsplash.com/photo-1601914697928-0b536e76d048?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEdleXNlciUyMFNlcnZpY2V8ZW58MHx8MHx8fDA%3D" alt="Geyser Service" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -20px -20px 12px;">
+        <h3 data-en="Geyser Service" data-bn="গিজার সার্ভিস">Geyser Service</h3>
+        <p data-en="Heating element & full repair" data-bn="হিটিং এলিমেন্ট ও সম্পূর্ণ মেরামত">Heating element & full repair</p>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <img src="images/chimneys.png" alt="Chimney Service" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -20px -20px 12px;">
+        <h3 data-en="Chimney Service" data-bn="চিমনি সার্ভিস">Chimney Service</h3>
+        <p data-en="Cleaning, motor & filter repair" data-bn="পরিষ্কার, মোটর ও ফিল্টার মেরামত">Cleaning, motor & filter repair</p>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <img src="https://images.unsplash.com/photo-1649038780045-235e4b6e40b4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2F0ZXIlMjBNb3RvciUyMFNlcnZpY2V8ZW58MHx8MHx8fDA%3D" alt="Motor Service" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -20px -20px 12px;">
+        <h3 data-en="Motor Service" data-bn="মোটর সার্ভিস">Motor Service</h3>
+        <p data-en="Water pump & motor winding" data-bn="ওয়াটার পাম্প ও মোটর ওয়্যাইন্ডিং">Water pump & motor winding</p>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <img src="https://images.unsplash.com/photo-1622426385889-4fc93a72423a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fEludmVydGVyJTIwU2VydmljZSUyMCUyNiUyMFJlcGFpcnxlbnwwfHwwfHx8MA%3D%3D"   alt="Inverter Service" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -20px -20px 12px;">
+        <h3 data-en="Inverter Service" data-bn="ইনভার্টার সার্ভিস">Inverter Service</h3>
+        <p data-en="Battery & inverter repair" data-bn="ব্যাটারি ও ইনভার্টার মেরামত">Battery & inverter repair</p>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <img src="https://images.unsplash.com/photo-1555470100-1728256970aa?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGVsZWN0cmljJTIwZmFufGVufDB8fDB8fHw" alt="Fan Service" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -20px -20px 12px;">
+        <h3 data-en="Fan Service" data-bn="ফ্যান সার্ভিস">Fan Service</h3>
+        <p data-en="Ceiling, table & exhaust fans" data-bn="সিলিং, টেবিল ও এগজস্ট ফ্যান">Ceiling, table & exhaust fans</p>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <img src="https://images.unsplash.com/photo-1668097613572-40b7c11c8727?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SW52ZXJ0ZXIlMjBTZXJ2aWNlfGVufDB8fDB8fHww" alt="Solar Service" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -20px -20px 12px;">
+        <h3 data-en="Solar Plate" data-bn="সোলার প্লেট">Solar Plate</h3>
+        <p data-en="Solar panel installation & repair" data-bn="সোলার প্যানেল ইনস্টলেশন ও মেরামত">Solar panel installation & repair</p>
+      </a>
+    </div>
+    <div class="text-center mt-32">
+      <a href="services.html" class="btn btn-navy" data-en="View All Services →" data-bn="সব সেবা দেখুন →">View All Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-content reveal">
+        <div class="tag" style="background:var(--gold);color:var(--navy-dark);display:inline-block;padding:4px 16px;border-radius:4px;font-family:var(--font-head);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;" data-en="Why Choose Us" data-bn="কেন আমাদের বেছে নেবেন">Why Choose Us</div>
+        <h2 data-en="Your Trust Is Our Responsibility" data-bn="আপনার বিশ্বাসই আমাদের দায়িত্ব">Your Trust Is Our Responsibility</h2>
+        <div class="divider left"></div>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="wi-icon"><i class="fas fa-bolt"></i></div>
+            <div>
+              <h4 data-en="Fast & On-Time Service" data-bn="দ্রুত ও সময়মতো সেবা">Fast & On-Time Service</h4>
+              <p data-en="We reach your location quickly. Share your WhatsApp location for fastest response." data-bn="আমরা দ্রুত আপনার কাছে পৌঁছাই। দ্রুততম সাড়ার জন্য WhatsApp লোকেশন শেয়ার করুন।">We reach your location quickly. Share your WhatsApp location for fastest response.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="wi-icon"><i class="fas fa-shield-alt"></i></div>
+            <div>
+              <h4 data-en="Safe & Quality Work" data-bn="নিরাপদ ও মানসম্মত কাজ">Safe & Quality Work</h4>
+              <p data-en="All electrical work done with proper safety standards and quality parts." data-bn="সব বৈদ্যুতিক কাজ সঠিক নিরাপত্তা মান ও মানসম্পন্ন যন্ত্রাংশ দিয়ে করা হয়।">All electrical work done with proper safety standards and quality parts.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="wi-icon"><i class="fas fa-money-bill-wave"></i></div>
+            <div>
+              <h4 data-en="Affordable Pricing" data-bn="সাশ্রয়ী মূল্য">Affordable Pricing</h4>
+              <p data-en="Transparent pricing with no hidden charges. Best value for your money." data-bn="কোনো লুকানো চার্জ ছাড়া স্বচ্ছ মূল্য। আপনার অর্থের সেরা মূল্য।">Transparent pricing with no hidden charges. Best value for your money.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="wi-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4 data-en="Easy to Contact" data-bn="সহজে যোগাযোগ">Easy to Contact</h4>
+              <p data-en="Call, WhatsApp, or fill the form — we respond quickly to all requests." data-bn="কল করুন, WhatsApp করুন বা ফর্ম পূরণ করুন — আমরা দ্রুত সাড়া দিই।">Call, WhatsApp, or fill the form — we respond quickly to all requests.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual reveal">
+        <div class="trust-badge">
+          <div class="tb-icon"><i class="fas fa-trophy"></i></div>
+          <div>
+            <strong data-en="Best Quality Guarantee" data-bn="সর্বোত্তম মান গ্যারান্টি">Best Quality Guarantee</strong>
+            <span data-en="We stand behind every job we do" data-bn="আমরা প্রতিটি কাজের পিছনে দাঁড়াই">We stand behind every job we do</span>
+          </div>
+        </div>
+        <div class="trust-badge">
+          <div class="tb-icon"><i class="fas fa-smile"></i></div>
+          <div>
+            <strong data-en="Customer Satisfaction First" data-bn="গ্রাহক সন্তুষ্টি প্রথম">Customer Satisfaction First</strong>
+            <span data-en="500+ happy customers across the region" data-bn="অঞ্চল জুড়ে ৫০০+ সন্তুষ্ট গ্রাহক">500+ happy customers across the region</span>
+          </div>
+        </div>
+        <div class="trust-badge">
+          <div class="tb-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <strong data-en="Local Service, Expert Team" data-bn="স্থানীয় সেবা, বিশেষজ্ঞ দল">Local Service, Expert Team</strong>
+            <span data-en="Born and serving in Bongaon, West Bengal" data-bn="বঙ্গাঁওতে জন্মগ্রহণ ও সেবা প্রদান, পশ্চিমবঙ্গ">Born and serving in Bongaon, West Bengal</span>
+          </div>
+        </div>
+        <div class="trust-badge">
+          <div class="tb-icon"><i class="fas fa-book"></i></div>
+          <div>
+            <strong data-en="Training for Newcomers" data-bn="নতুনদের জন্য প্রশিক্ষণ">Training for Newcomers</strong>
+            <span data-en="Learn electrical work from real experts" data-bn="আসল বিশেষজ্ঞদের কাছ থেকে বৈদ্যুতিক কাজ শিখুন">Learn electrical work from real experts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="section area-section">
+  <div class="container">
+    <div class="area-grid">
+      <div class="reveal">
+        <div class="tag" style="display:inline-block;background:rgba(245,197,24,0.15);color:var(--gold);font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 16px;border-radius:4px;border:1px solid rgba(245,197,24,.3);margin-bottom:14px;" data-en="Where We Serve" data-bn="আমরা কোথায় সেবা দিই">Where We Serve</div>
+        <h2 class="text-white" data-en="Our Service Area" data-bn="আমাদের সেবা এলাকা">Our Service Area</h2>
+        <div class="divider left" style="margin-bottom:24px;"></div>
+        <p style="color:rgba(255,255,255,0.65);margin-bottom:32px;" data-en="We provide electrical and appliance repair services from Bongaon to Barasat, covering all major areas in between." data-bn="আমরা বঙ্গাঁও থেকে বারাসাত পর্যন্ত বৈদ্যুতিক ও যন্ত্রপাতি মেরামত সেবা প্রদান করি, মাঝখানের সমস্ত প্রধান এলাকা কভার করে।">We provide electrical and appliance repair services from Bongaon to Barasat, covering all major areas in between.</p>
+        <div class="hero-btns">
+          <a href="book-service.html" class="btn btn-primary" data-en="📋 Book Service in Your Area" data-bn="📋 আপনার এলাকায় সেবা বুক করুন">📋 Book Service in Your Area</a>
+        </div>
+      </div>
+      <div class="area-map reveal">
+        <div class="route-line">
+          <div class="route-stop">
+            <div class="route-dot end">📍</div>
+            <div class="route-stop-label">
+              <strong data-en="Bongaon" data-bn="বঙ্গাঁও">Bongaon</strong>
+              <span data-en="Main base — Bongaon, West Bengal" data-bn="প্রধান কেন্দ্র — বঙ্গাঁও, পশ্চিমবঙ্গ">Main base — Bongaon, West Bengal</span>
+            </div>
+          </div>
+          <div class="route-stop">
+            <div class="route-dot">●</div>
+            <div class="route-stop-label">
+              <strong data-en="Gaighata" data-bn="গাইঘাটা">Gaighata</strong>
+              <span data-en="Service available" data-bn="সেবা পাওয়া যায়">Service available</span>
+            </div>
+          </div>
+          <div class="route-stop">
+            <div class="route-dot">●</div>
+            <div class="route-stop-label">
+              <strong data-en="Gobardanga" data-bn="গোবরডাঙা">Gobardanga</strong>
+              <span data-en="Service available" data-bn="সেবা পাওয়া যায়">Service available</span>
+            </div>
+          </div>
+          <div class="route-stop">
+            <div class="route-dot">●</div>
+            <div class="route-stop-label">
+              <strong data-en="Habra" data-bn="হাবরা">Habra</strong>
+              <span data-en="Service available" data-bn="সেবা পাওয়া যায়">Service available</span>
+            </div>
+          </div>
+          <div class="route-stop">
+            <div class="route-dot">●</div>
+            <div class="route-stop-label">
+              <strong data-en="Ashoknagar" data-bn="অশোকনগর">Ashoknagar</strong>
+              <span data-en="Service available" data-bn="সেবা পাওয়া যায়">Service available</span>
+            </div>
+          </div>
+          <div class="route-stop">
+            <div class="route-dot end">📍</div>
+            <div class="route-stop-label">
+              <strong data-en="Barasat" data-bn="বারাসাত">Barasat</strong>
+              <span data-en="End point of service area" data-bn="সেবা এলাকার শেষ বিন্দু">End point of service area</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section workflow-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag" data-en="How It Works" data-bn="এটি কীভাবে কাজ করে">How It Works</div>
+      <h2 data-en="Book a Service in 3 Easy Steps" data-bn="৩টি সহজ ধাপে সেবা বুক করুন">Book a Service in 3 Easy Steps</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="workflow-steps">
+      <div class="workflow-step reveal">
+        <div class="step-num">1</div>
+        <div style="font-size:2rem;margin-bottom:12px;"><i class="fas fa-clipboard-list"></i></div>
+        <h4 data-en="Fill the Service Form" data-bn="সেবা ফর্ম পূরণ করুন">Fill the Service Form</h4>
+        <p data-en="Enter your name, phone, address and describe your electrical problem." data-bn="আপনার নাম, ফোন, ঠিকানা লিখুন এবং বৈদ্যুতিক সমস্যা বর্ণনা করুন।">Enter your name, phone, address and describe your electrical problem.</p>
+      </div>
+      <div class="workflow-step reveal">
+        <div class="step-num">2</div>
+        <div style="font-size:2rem;margin-bottom:12px;"><i class="fas fa-map-pin"></i></div>
+        <h4 data-en="Share Your Location" data-bn="আপনার লোকেশন শেয়ার করুন">Share Your Location</h4>
+        <p data-en="Send your WhatsApp Live Location or Google Maps link so we find you fast." data-bn="দ্রুত খুঁজে পেতে WhatsApp Live Location বা Google Maps লিঙ্ক পাঠান।">Send your WhatsApp Live Location or Google Maps link so we find you fast.</p>
+      </div>
+      <div class="workflow-step reveal">
+        <div class="step-num">3</div>
+        <div style="font-size:2rem;margin-bottom:12px;"><i class="fas fa-wrench"></i></div>
+        <h4 data-en="We Come & Fix It" data-bn="আমরা আসি ও ঠিক করি">We Come & Fix It</h4>
+        <p data-en="Our technician visits your home and completes the repair or installation." data-bn="আমাদের টেকনিশিয়ান আপনার বাড়িতে আসে এবং মেরামত বা ইনস্টলেশন সম্পন্ন করে।">Our technician visits your home and completes the repair or installation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <h2 data-en="Need Electrical Help Right Now?" data-bn="এখনই বৈদ্যুতিক সাহায্য দরকার?">Need Electrical Help Right Now?</h2>
+        <p data-en="Call us or WhatsApp — we respond fast!" data-bn="আমাদের কল করুন বা WhatsApp করুন — আমরা দ্রুত সাড়া দিই!">Call us or WhatsApp — we respond fast!</p>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+918436078538" class="btn btn-navy"><i class="fas fa-phone"></i> 8436078538</a>
+        <a href="https://wa.me/918436078538" class="btn btn-green" target="_blank"><i class="fab fa-whatsapp"></i> <span data-en="WhatsApp Us" data-bn="WhatsApp করুন">WhatsApp Us</span></a>
+        <a href="book-service.html" class="btn btn-outline" style="border-color:var(--navy);color:var(--navy);" data-en="📋 Book Online" data-bn="📋 অনলাইনে বুক করুন"><i class="fas fa-clipboard"></i> Book Online</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/918436078538" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.138.563 4.144 1.543 5.881L0 24l6.293-1.517A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.878 9.878 0 01-5.031-1.375l-.361-.214-3.735.979.997-3.645-.235-.374A9.86 9.86 0 012.118 12C2.118 6.536 6.536 2.118 12 2.118S21.882 6.536 21.882 12 17.464 21.882 12 21.882z"/></svg>
+</a>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-row"><img src="images/Logo.png" alt="Logo" style="width: 40px; height: 40px; object-fit: contain; margin-right: 8px;"><div class="brand-name" data-en="A.B Electric Service" data-bn="এ.বি ইলেকট্রিক সার্ভিস">A.B Electric Service</div></div>
+        <p data-en="Professional electrical repair, installation, and appliance servicing across the Bongaon–Barasat region. Fast, reliable, and trusted." data-bn="বঙ্গাঁও–বারাসাত অঞ্চলে পেশাদার বৈদ্যুতিক মেরামত, ইনস্টলেশন এবং যন্ত্রপাতি সার্ভিসিং। দ্রুত, নির্ভরযোগ্য এবং বিশ্বস্ত।">Professional electrical repair, installation, and appliance servicing across the Bongaon–Barasat region. Fast, reliable, and trusted.</p>
+        <p style="margin-top:12px;color:rgba(255,255,255,0.4);font-size:.82rem;" data-en="Provided by Kiranmoy Paul" data-bn="কিরণময় পাল কর্তৃক প্রদত্ত">Provided by Kiranmoy Paul</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-en="Quick Links" data-bn="দ্রুত লিঙ্ক">Quick Links</h5>
+        <ul>
+          <li><a href="index.html" data-en="🏠 Home" data-bn="🏠 হোম">🏠 Home</a></li>
+          <li><a href="about.html" data-en="👤 About Us" data-bn="👤 আমাদের সম্পর্কে">👤 About Us</a></li>
+          <li><a href="services.html" data-en="⚡ Services" data-bn="⚡ সেবাসমূহ">⚡ Services</a></li>
+          <li><a href="training.html" data-en="📚 Training" data-bn="📚 প্রশিক্ষণ">📚 Training</a></li>
+          <li><a href="book-service.html" data-en="📋 Book Service" data-bn="📋 সেবা বুক করুন">📋 Book Service</a></li>
+          <li><a href="contact.html" data-en="📞 Contact" data-bn="📞 যোগাযোগ">📞 Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-en="Services" data-bn="সেবাসমূহ">Services</h5>
+        <ul>
+          <li><a href="services.html" data-en="❄️ AC Service" data-bn="❄️ এসি সার্ভিস">❄️ AC Service</a></li>
+          <li><a href="services.html" data-en="🧊 Fridge Service" data-bn="🧊 ফ্রিজ সার্ভিস">🧊 Fridge Service</a></li>
+          <li><a href="services.html" data-en="🚿 Geyser Service" data-bn="🚿 গিজার সার্ভিস">🚿 Geyser Service</a></li>
+          <li><a href="services.html" data-en="💨 Chimney Service" data-bn="💨 চিমনি সার্ভিস">💨 Chimney Service</a></li>
+          <li><a href="services.html" data-en="⚙️ Motor Service" data-bn="⚙️ মোটর সার্ভিস">⚙️ Motor Service</a></li>
+          <li><a href="services.html" data-en="🔋 Inverter Service" data-bn="🔋 ইনভার্টার সার্ভিস">🔋 Inverter Service</a></li>
+          <li><a href="services.html" data-en="🌀 Fan Service" data-bn="🌀 ফ্যান সার্ভিস">🌀 Fan Service</a></li>
+          <li><a href="services.html" data-en="☀️ Solar Plate" data-bn="☀️ সোলার প্লেট">☀️ Solar Plate</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-en="Contact Us" data-bn="যোগাযোগ করুন">Contact Us</h5>
+        <div class="footer-contact-item"><span class="ci-icon">📞</span><div><a href="tel:+918436078538">8436078538</a><br><a href="tel:+916296255199">6296255199</a></div></div>
+        <div class="footer-contact-item"><span class="ci-icon">✉️</span><a href="mailto:kiranmoypaul49@gmail.com">kiranmoypaul49@gmail.com</a></div>
+        <div class="footer-contact-item"><span class="ci-icon">📍</span><span data-en="Bongaon, West Bengal" data-bn="বঙ্গাঁও, পশ্চিমবঙ্গ">Bongaon, West Bengal</span></div>
+        <div class="footer-contact-item"><span class="ci-icon">🗺️</span><span data-en="Bongaon to Barasat & nearby" data-bn="বঙ্গাঁও থেকে বারাসাত ও আশপাশ">Bongaon to Barasat & nearby</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>⚡ <strong data-en="Fast Service" data-bn="দ্রুত সেবা">Fast Service</strong> &nbsp;•&nbsp; <strong data-en="Reliable Work" data-bn="নির্ভরযোগ্য কাজ">Reliable Work</strong> &nbsp;•&nbsp; <strong data-en="Your Trust, Our Responsibility" data-bn="আপনার বিশ্বাস, আমাদের দায়িত্ব">Your Trust, Our Responsibility</strong></p>
+      <p style="margin-top:6px;">© 2025 A.B Electric Service. <span data-en="Provided by" data-bn="প্রদত্ত">Provided by</span> <strong>Kiranmoy Paul</strong></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+/* ============================================================
+   BILINGUAL ENGINE — English ↔ Bengali
+   ============================================================ */
+(function(){
+  const STORAGE_KEY = 'ab_lang';
+  let currentLang = localStorage.getItem(STORAGE_KEY) || 'en';
+
+  const btn = document.getElementById('langToggle');
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem(STORAGE_KEY, lang);
+
+    // Update all data-en / data-bn elements
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const txt = el.getAttribute('data-' + lang);
+      if (!txt) return;
+      // For elements that may contain inner HTML tags like <span>
+      if (txt.includes('<')) {
+        el.innerHTML = txt;
+      } else {
+        el.textContent = txt;
+      }
+    });
+
+    // Update HTML lang attribute & font
+    document.documentElement.lang = lang === 'bn' ? 'bn' : 'en';
+    document.body.style.fontFamily = lang === 'bn'
+      ? "'Hind Siliguri', sans-serif"
+      : "'Nunito', sans-serif";
+
+    // Update toggle button label
+    btn.textContent = lang === 'en' ? '🌐 বাংলা' : '🌐 English';
+    btn.setAttribute('data-current', lang);
+  }
+
+  btn.addEventListener('click', function(){
+    applyLang(currentLang === 'en' ? 'bn' : 'en');
+  });
+
+  // Apply on page load
+  applyLang(currentLang);
+})();
+</script>
+</body>
+</html>
